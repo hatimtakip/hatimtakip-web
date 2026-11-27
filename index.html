@@ -12,8 +12,10 @@
 :root { 
     /* Varsayılan değerler (JS ile güncellenecek) */
     --bg: #111318; --panel: #1d222b; --panel2: #252c36; 
-    --gold: #d9b96c; --gold-text: #211d13; 
-    --muted: #a4aab5; --line: #343b47; --white: #f5f5f2; 
+    //--gold: #d9b96c; --gold-text: #211d13; 
+    --gold: #1d4ed8; --gold-text: #211d13; 
+    
+	--muted: #a4aab5; --line: #343b47; --white: #f5f5f2; 
     --red: #e53935; --green: #2e7d32;
     --input-bg: #12161d;
 }
@@ -31,16 +33,20 @@ header{display:flex;align-items:center;justify-content:space-between;margin:4px 
 .center{text-align:center;padding:14px 0 10px}
 .zname{color:var(--gold);font-size:22px;font-weight:650;margin:4px}
 .countrow{display:flex;justify-content:center;align-items:baseline;gap:5px;margin:5px 0}
-.count{font-size:52px;font-weight:750;letter-spacing:-2px}
+/* .count{font-size:52px;font-weight:750;letter-spacing:-2px}  //say ekranı numaraları */
+.count{font-size:52px;font-weight:750;letter-spacing:-2px;color:var(--gold)}
+// ```[cite: 1]
 .birikmis{font-size:24px;color:var(--red);font-weight:700}
 .counter{
     width: 100%; 
     height: 110px;   
     border-radius: 24px; 
     margin: 16px 0;
-    border: 2px solid #a98e50; 
-    background: linear-gradient(135deg, #f0d994, #c7a957 70%, #987b3e); 
-    color: var(--gold-text); 
+    border: 2px var(--gold);//solid #a98e50; 
+    //background: linear-gradient(135deg, #f0d994, #c7a957 70%, #987b3e); 
+    //border: var (--gold);
+	background: var(--gold);
+	color: var(--gold-text); 
     display: flex; 
     flex-direction: row; 
     align-items: center; 
@@ -77,8 +83,8 @@ header{display:flex;align-items:center;justify-content:space-between;margin:4px 
 }
 .sayac-card:active { transform: scale(0.99); }
 .index-badge {
-    background: #1b5e20;
-    color: #ffffff;
+    background: var(--gold); // #1b5e20;
+    color: var(--gold-text); //#ffffff;
     font-weight: 700;
     font-size: 14px;
     width: 28px;
@@ -208,7 +214,6 @@ input:checked + .slider-sw:before { transform: translateX(20px); }
 <section id="detay" class="view">
   <div style="display:flex; align-items:center; margin-bottom: 10px;">
     <button class="secondary" id="btnGeri" style="padding:8px 12px; margin-right:10px;">← Geri</button>
-    <div class="eyebrow" style="margin:0;">DETAY</div>
   </div>
 
   <div class="card center">
@@ -218,6 +223,7 @@ input:checked + .slider-sw:before { transform: translateX(20px); }
         <button class="secondary" id="btnFontAzalt" style="flex: 1; padding: 8px 4px; font-weight: bold; font-size: 13px;">A-</button>
         <button class="secondary" id="btnFontArttir" style="flex: 1; padding: 8px 4px; font-weight: bold; font-size: 13px;">A+</button>
     </div>
+
     <div class="zname" id="activeName">Salatı Münciye</div>
     <div id="activeNiyet" style="font-size: 13px; color: var(--muted); font-style: italic; margin-top: 4px; margin-bottom: 12px; display: none;"></div>
 	
